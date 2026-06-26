@@ -1,86 +1,88 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { brand, navigationLinks } from "../data/siteContent";
 
 export default function Navbar({ scrolled }) {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "bg-slate-950/80 backdrop-blur-lg border-b border-slate-800"
-          : "bg-slate-950/20 backdrop-blur-sm"
+          ? "border-b border-[var(--color-line)] bg-[rgba(248,245,239,0.92)] backdrop-blur-xl"
+          : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-14 sm:h-16 md:h-20">
-          
-          {/* Logo */}
-          <div className="flex items-center space-x-1 group cursor-pointer">
-            <img
-              src="/logo.jpeg"
-              alt="logo"
-              className="w-6 h-6 sm:w-8 sm:h-8"
-            />
-            <span className="text-lg sm:text-xl md:text-2xl font-medium">
-              <span className="text-white">CORTE </span>
-              <span className="text-blue-400">X</span>
-            </span>
-          </div>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between md:h-20">
+          <a href="#home" className="flex items-center gap-3">
+            <div className="rounded-[1.2rem] bg-white/90 px-2 py-2 shadow-[0_12px_30px_rgba(16,35,60,0.08)]">
+              <img
+                src={brand.logo}
+                alt={`${brand.name} logo`}
+                className="h-8 w-auto sm:h-9"
+              />
+            </div>
+            <div className="hidden leading-none sm:block">
+              <span className="block text-sm font-bold uppercase tracking-[0.3em] text-[var(--color-navy)]">
+                TAPRO
+              </span>
+              <span className="block pt-1 text-[11px] uppercase tracking-[0.42em] text-[var(--color-navy-soft)]">
+                MEDIA
+              </span>
+            </div>
+          </a>
 
-          {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-            {[
-              { name: "Home", href: "#home" },
-              { name: "About", href: "#about" },
-              { name: "Services", href: "#services" },
-              // { name: "Testimonials", href: "#testimonials" },
-              { name: "Contact", href: "#contact" },
-            ].map((link) => (
+          <div className="hidden items-center space-x-6 md:flex lg:space-x-8">
+            {navigationLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-300 hover:text-white text-sm lg:text-base cursor-pointer"
+                className="text-sm font-medium text-[var(--color-ink-soft)] hover:text-[var(--color-accent)] lg:text-base"
               >
                 {link.name}
               </a>
             ))}
+            <a href="#contact" className="brand-button">
+              Let&apos;s talk
+            </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-gray-300 hover:text-white cursor-pointer"
+            className="cursor-pointer p-2 text-[var(--color-navy)] md:hidden"
             onClick={() => setMobileMenuIsOpen((prev) => !prev)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuIsOpen}
           >
             {mobileMenuIsOpen ? (
-              <X className="w-5 h-5 sm:w-6 sm:h-6" />
+              <X className="h-6 w-6" />
             ) : (
-              <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
+              <Menu className="h-6 w-6" />
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuIsOpen && (
-        <div className="md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 animate-in slide-in-from-top duration-300">
-          <div className="px-4 py-4 sm:py-6 space-y-3 sm:space-y-4">
-            {[
-              { name: "Home", href: "#home" },
-              { name: "About", href: "#about" },
-              { name: "Services", href: "#services" },
-              // { name: "Testimonials", href: "#testimonials" },
-              { name: "Contact", href: "#contact" },
-            ].map((link) => (
+        <div className="animate-in slide-in-from-top duration-300 border-t border-[var(--color-line)] bg-[rgba(248,245,239,0.96)] backdrop-blur-xl md:hidden">
+          <div className="space-y-4 px-4 py-5">
+            {navigationLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuIsOpen(false)}
-                className="block text-gray-300 hover:text-white text-sm lg:text-base cursor-pointer"
+                className="block text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)]"
               >
                 {link.name}
               </a>
             ))}
+            <a
+              href="#contact"
+              onClick={() => setMobileMenuIsOpen(false)}
+              className="brand-button inline-flex"
+            >
+              Let&apos;s talk
+            </a>
           </div>
         </div>
       )}
