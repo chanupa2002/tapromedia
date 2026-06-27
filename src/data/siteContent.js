@@ -7,7 +7,7 @@ import {
 
 export const brand = {
   name: "TAPRO MEDIA",
-  label: "Digital Storytelling Studio",
+  label: "",
   slogan: "A Brand Deserves a Story",
   email: "tapromedia.sl@gmail.com",
   phone: "+94 74 298 0182",
@@ -29,7 +29,7 @@ export const navigationLinks = [
 ];
 
 export const heroContent = {
-  eyebrow: "Digital storytelling studio",
+  eyebrow: "",
   title: "Your story is the strategy.",
   emphasis: "We tell it right.",
   description:

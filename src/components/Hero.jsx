@@ -11,11 +11,17 @@ export default function Hero() {
       <div className="relative px-4 pt-28 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-4xl py-16 sm:py-20">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/40">
-              {heroContent.eyebrow}
-            </p>
+            {heroContent.eyebrow ? (
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/40">
+                {heroContent.eyebrow}
+              </p>
+            ) : null}
 
-            <h1 className="mt-8 font-['Georgia'] text-5xl font-semibold leading-[0.98] tracking-[-0.04em] text-white sm:text-6xl lg:text-[5.25rem]">
+            <h1
+              className={`font-['Georgia'] text-5xl font-semibold leading-[0.98] tracking-[-0.04em] text-white sm:text-6xl lg:text-[5.25rem] ${
+                heroContent.eyebrow ? "mt-8" : "mt-2"
+              }`}
+            >
               {heroContent.title}
               <br />
               <span className="text-[var(--color-accent-soft)] italic">

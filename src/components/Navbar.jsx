@@ -15,12 +15,14 @@ export default function Navbar({ scrolled }) {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between md:h-20">
-          <a href="#home" className="flex items-center gap-3 sm:gap-4">
-            <img
-              src={brand.logo}
-              alt={`${brand.name} logo`}
-              className="h-12 w-auto drop-shadow-[0_10px_24px_rgba(255,106,0,0.22)] sm:h-14"
-            />
+          <a href="#home" className="flex items-center gap-3 sm:gap-4" aria-label={brand.name}>
+            <div className="relative h-12 w-12 overflow-hidden rounded-full bg-white shadow-[0_12px_30px_rgba(16,35,60,0.1)] sm:h-14 sm:w-14">
+              <img
+                src={brand.logo}
+                alt={`${brand.name} logo`}
+                className="absolute left-[-0.15rem] top-1/2 h-12 w-auto max-w-none -translate-y-1/2 object-contain sm:h-14"
+              />
+            </div>
             <div className="leading-none">
               <span className="block text-sm font-bold uppercase tracking-[0.24em] text-white sm:text-base">
                 TAPRO
