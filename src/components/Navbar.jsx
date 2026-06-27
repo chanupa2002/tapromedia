@@ -9,7 +9,7 @@ export default function Navbar({ scrolled }) {
     <nav
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "border-b border-[var(--color-line)] bg-[rgba(248,245,239,0.92)] backdrop-blur-xl"
+          ? "border-b border-white/8 bg-[rgba(5,15,27,0.88)] backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
@@ -24,10 +24,10 @@ export default function Navbar({ scrolled }) {
               />
             </div>
             <div className="hidden leading-none sm:block">
-              <span className="block text-sm font-bold uppercase tracking-[0.3em] text-[var(--color-navy)]">
+              <span className="block text-sm font-bold uppercase tracking-[0.3em] text-white">
                 TAPRO
               </span>
-              <span className="block pt-1 text-[11px] uppercase tracking-[0.42em] text-[var(--color-navy-soft)]">
+              <span className="block pt-1 text-[11px] uppercase tracking-[0.42em] text-white/45">
                 MEDIA
               </span>
             </div>
@@ -38,18 +38,18 @@ export default function Navbar({ scrolled }) {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-[var(--color-ink-soft)] hover:text-[var(--color-accent)] lg:text-base"
+                className="text-sm font-medium text-white/52 hover:text-white lg:text-base"
               >
                 {link.name}
               </a>
             ))}
             <a href="#contact" className="brand-button">
-              Let&apos;s talk
+              Book a free call
             </a>
           </div>
 
           <button
-            className="cursor-pointer p-2 text-[var(--color-navy)] md:hidden"
+            className="cursor-pointer p-2 text-white md:hidden"
             onClick={() => setMobileMenuIsOpen((prev) => !prev)}
             aria-label="Toggle navigation menu"
             aria-expanded={mobileMenuIsOpen}
@@ -64,14 +64,14 @@ export default function Navbar({ scrolled }) {
       </div>
 
       {mobileMenuIsOpen && (
-        <div className="animate-in slide-in-from-top duration-300 border-t border-[var(--color-line)] bg-[rgba(248,245,239,0.96)] backdrop-blur-xl md:hidden">
+        <div className="animate-in slide-in-from-top duration-300 border-t border-white/8 bg-[rgba(5,15,27,0.96)] backdrop-blur-xl md:hidden">
           <div className="space-y-4 px-4 py-5">
             {navigationLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuIsOpen(false)}
-                className="block text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)]"
+                className="block text-sm font-medium text-white/76 hover:text-white"
               >
                 {link.name}
               </a>
@@ -81,7 +81,7 @@ export default function Navbar({ scrolled }) {
               onClick={() => setMobileMenuIsOpen(false)}
               className="brand-button inline-flex"
             >
-              Let&apos;s talk
+              Book a free call
             </a>
           </div>
         </div>
