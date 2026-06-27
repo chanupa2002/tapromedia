@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Instagram, Mail, Phone } from "lucide-react";
+import { ArrowRight, Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import About from "./components/About.jsx";
 import Footer from "./components/Footer.jsx";
 import Hero from "./components/Hero.jsx";
@@ -82,6 +82,21 @@ function ContactSection() {
                   </div>
 
                   <a
+                    href={brand.facebook}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-4 rounded-3xl border border-white/12 bg-white/8 px-5 py-4"
+                  >
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/12">
+                      <Facebook className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-white/62">Facebook</p>
+                      <p className="font-semibold">Follow Tapro Media</p>
+                    </div>
+                  </a>
+
+                  <a
                     href={brand.instagram}
                     target="_blank"
                     rel="noreferrer"
@@ -92,7 +107,22 @@ function ContactSection() {
                     </div>
                     <div>
                       <p className="text-sm text-white/62">Instagram</p>
-                      <p className="font-semibold">Visit our profile</p>
+                      <p className="font-semibold">See our latest work</p>
+                    </div>
+                  </a>
+
+                  <a
+                    href={brand.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-4 rounded-3xl border border-white/12 bg-white/8 px-5 py-4"
+                  >
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/12">
+                      <Linkedin className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-white/62">LinkedIn</p>
+                      <p className="font-semibold">Connect with our brand</p>
                     </div>
                   </a>
                 </div>

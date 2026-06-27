@@ -10,13 +10,15 @@ export const brand = {
   label: "Digital Storytelling Studio",
   slogan: "A Brand Deserves a Story",
   email: "tapromedia.sl@gmail.com",
-  phone: "+94 76 699 2183",
-  phoneHref: "tel:+94766992183",
-  secondaryPhone: "+94 74 298 0182",
-  secondaryPhoneHref: "tel:+94742980182",
+  phone: "+94 74 298 0182",
+  phoneHref: "tel:+94742980182",
+  secondaryPhone: "+94 76 699 2183",
+  secondaryPhoneHref: "tel:+94766992183",
   address: "453, Eriyawetiya, Kelaniya",
-  instagram: "https://www.instagram.com/_cortex00_/?hl=en",
-  linkedin: "https://www.linkedin.com/company/corte-x2833/?viewAsMember=true",
+  facebook: "https://web.facebook.com/profile.php?id=61591123004525",
+  instagram: "https://www.instagram.com/tapro.media/?hl=en",
+  linkedin:
+    "https://www.linkedin.com/company/tapro-media/?lipi=urn%3Ali%3Apage%3Ad_flagship3_messaging_conversation_detail%3BKhJhwOJ4T1C7ZwzyJeXJFA%3D%3D",
   logo: "/tapro-logo.png",
 };
 

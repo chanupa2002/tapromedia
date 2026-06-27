@@ -9,6 +9,9 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-wrap items-center gap-6 text-xs text-white/28">
+          <a href={brand.facebook} target="_blank" rel="noreferrer" className="hover:text-white/60">
+            Facebook
+          </a>
           <a href={brand.instagram} target="_blank" rel="noreferrer" className="hover:text-white/60">
             Instagram
           </a>
