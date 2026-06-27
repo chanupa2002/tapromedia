@@ -14,7 +14,7 @@ export const brand = {
   phoneHref: "tel:+94742980182",
   secondaryPhone: "+94 76 699 2183",
   secondaryPhoneHref: "tel:+94766992183",
-  address: "453, Eriyawetiya, Kelaniya",
+  address: "426/F, Eriyawetiya, Kelaniya",
   facebook: "https://web.facebook.com/profile.php?id=61591123004525",
   instagram: "https://www.instagram.com/tapro.media/?hl=en",
   linkedin:
@@ -120,7 +120,7 @@ export const clients = [
     imageClassName: "h-22 w-auto object-contain opacity-92 sm:h-26",
   },
   {
-    name: "My Cargo UAE",
+    name: "My Cargo Dubai",
     logo: "/client-mycargo.png",
     imageClassName: "h-18 w-auto object-contain opacity-95 sm:h-20",
   },
